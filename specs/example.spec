@@ -78,3 +78,7 @@ version : 3.8
 
 * Navigate FY Control GL Map
 * Mapping FY Control GL Map coa:"Demo_faizabad" ledger:"Demo_Faizabad_ledger"
+## BillProfile
+
+* Navigate to Bill RunProfile
+* Add BillProfile for Domian:"Faizabad"

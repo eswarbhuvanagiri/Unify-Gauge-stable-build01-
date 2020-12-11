@@ -633,13 +633,13 @@ step("Navigate to Bill RunProfile", async () => {
     await waitFor(2000)
 
 });
-step("Add BillProfile", async () => {
+step("Add BillProfile for Domian:<domain>", async (dom) => {
     await click($("//a[@role='button' and @id='billProfileAddBtnId']"))
     await write("TestProfile", into(textBox({
         placeholder: "Enter Descriptive Name"
     })))
-    await write("Test", into(textBox({
-        placeholder: "Select Domain"
+    await write(dom, into(textBox({
+    name:"billProfiles.domno"
     })))
     await press('Enter')
     await waitFor(2000)
@@ -652,4 +652,7 @@ step("Add BillProfile", async () => {
 
     await click($("//a[@role='button' and @id='button-1083']"))
     await waitFor(2000)
+    await gauge.screenshot($("#msg-div"))
+    assert.ok(text("Success").exists(9, 9))
+    console.log("Mapped succefully")
 });
